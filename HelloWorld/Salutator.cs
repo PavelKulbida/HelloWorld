@@ -1,6 +1,6 @@
 ﻿namespace HelloWorld
 {
-  class Salutator
+  internal class Salutator
   {
     public string GetMessage()
     {

@@ -2,7 +2,7 @@
 
 namespace HelloWorld
 {
-  class ConsoleAdapter
+  internal class ConsoleAdapter
   {
     public void Show(string message)
     {
