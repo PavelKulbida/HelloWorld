@@ -1,4 +1,7 @@
-﻿namespace HelloWorld
+﻿using HelloWorld.Application;
+using HelloWorld.Infrastructure;
+
+namespace HelloWorld
 {
   internal static class ProgramCompositionRoot
   {

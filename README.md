@@ -8,3 +8,4 @@
 6) S: OutputSalutation, ProgramCompositionRoot
 7) D: ISalutator, IOutput, IOutputSalutation
 8) Unit testing (Subs and Mocks)
+9) Clean architecture (Application, Infrastructure)

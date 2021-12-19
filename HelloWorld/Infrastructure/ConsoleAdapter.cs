@@ -1,6 +1,7 @@
 ﻿using System;
+using HelloWorld.Application;
 
-namespace HelloWorld
+namespace HelloWorld.Infrastructure
 {
   internal class ConsoleAdapter : IOutput
   {

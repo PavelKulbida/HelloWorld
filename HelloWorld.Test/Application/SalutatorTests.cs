@@ -1,6 +1,7 @@
+using HelloWorld.Application;
 using NUnit.Framework;
 
-namespace HelloWorld.Test
+namespace HelloWorld.Test.Application
 {
   [TestFixture]
   public class SalutatorTests

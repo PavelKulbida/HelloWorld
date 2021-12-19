@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using HelloWorld.Application;
+using NUnit.Framework;
 
 namespace HelloWorld.Test
 {

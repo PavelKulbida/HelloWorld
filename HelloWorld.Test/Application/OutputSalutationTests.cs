@@ -1,8 +1,8 @@
-﻿using System;
+﻿using HelloWorld.Application;
 using Moq;
 using NUnit.Framework;
 
-namespace HelloWorld.Test
+namespace HelloWorld.Test.Application
 {
   [TestFixture]
   public class OutputSalutationTests
