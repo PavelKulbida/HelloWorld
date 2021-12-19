@@ -1,12 +1,14 @@
-﻿using System;
-
-namespace HelloWorld
+﻿namespace HelloWorld
 {
   class Program
   {
     static void Main(string[] args)
     {
-      Console.WriteLine("Hello World!");
+      var salutator = new Salutator();
+      var output = new ConsoleAdapter();
+
+      var message = salutator.GetMessage();
+      output.Show(message);
     }
   }
 }
