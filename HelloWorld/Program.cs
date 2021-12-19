@@ -8,11 +8,9 @@ namespace HelloWorld
   {
     public static void Main(string[] args)
     {
-      var salutator = new Salutator();
-      var output = new ConsoleAdapter();
-
-      var message = salutator.GetMessage();
-      output.Show(message);
+      ProgramCompositionRoot
+        .GetRoot()
+        .Execute();
     }
   }
 }
