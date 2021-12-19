@@ -1,4 +1,8 @@
-﻿namespace HelloWorld
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("HelloWorld.Test")]
+
+namespace HelloWorld
 {
   class Program
   {
