@@ -6,3 +6,4 @@
 4) Unit testing
 5) Continuous integration
 6) S: OutputSalutation, ProgramCompositionRoot
+7) D: ISalutator, IOutput, IOutputSalutation

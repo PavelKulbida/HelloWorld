@@ -1,11 +1,11 @@
 ﻿namespace HelloWorld
 {
-  internal class OutputSalutation
+  internal class OutputSalutation : IOutputSalutation
   {
-    private readonly Salutator _producer;
-    private readonly ConsoleAdapter _consumer;
+    private readonly ISalutator _producer;
+    private readonly IOutput _consumer;
 
-    public OutputSalutation(Salutator producer, ConsoleAdapter consumer)
+    public OutputSalutation(ISalutator producer, IOutput consumer)
     {
       _producer = producer;
       _consumer = consumer;

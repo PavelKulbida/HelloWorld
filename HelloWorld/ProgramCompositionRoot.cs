@@ -2,7 +2,7 @@
 {
   internal static class ProgramCompositionRoot
   {
-    public static OutputSalutation GetRoot()
+    public static IOutputSalutation GetRoot()
     {
       var salutator = new Salutator();
       var output = new ConsoleAdapter();
