@@ -1,11 +1,12 @@
-﻿using HelloWorld.Application;
+﻿using System;
+using HelloWorld.Application;
 using Moq;
 using NUnit.Framework;
 
 namespace HelloWorld.Test.Application
 {
   [TestFixture]
-  public class OutputSalutationTests
+  internal class OutputSalutationTests
   {
     [Test]
     public void ExecuteTest()
@@ -26,6 +27,32 @@ namespace HelloWorld.Test.Application
 
 
       outputMock.Verify(x => x.Show(testString));
+    }
+
+    [Test]
+    [TestCaseSource(nameof(NullableParameters), new object[] { nameof(ConstructorExeptionTest) })]
+    public void ConstructorExeptionTest(ISalutator producer, IOutput consumer)
+    {
+      Assert.Throws<ArgumentNullException>(() =>
+      {
+        _ = new OutputSalutation(producer, consumer);
+      });
+    }
+
+    private static TestCaseData[] NullableParameters(string testMethodName)
+    {
+      var producer = new Mock<ISalutator>().Object;
+      var consumer = new Mock<IOutput>().Object;
+
+      return new[]
+      {
+        new TestCaseData(new object[] { null, null })
+          .SetName($"{testMethodName}(null, null)"),
+        new TestCaseData(new object[] { null, consumer })
+          .SetName($"{testMethodName}(null, value)"), 
+        new TestCaseData(new object[] { producer, null})
+          .SetName($"{testMethodName}(value, null)")
+      };
     }
   }
 }

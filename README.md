@@ -9,3 +9,4 @@
 7) D: ISalutator, IOutput, IOutputSalutation
 8) Unit testing (Subs and Mocks)
 9) Clean architecture (Application, Infrastructure)
+10) Refactoring: Guard Clause + TestCases
