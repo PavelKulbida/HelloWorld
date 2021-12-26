@@ -10,3 +10,4 @@
 8) Unit testing (Subs and Mocks)
 9) Clean architecture (Application, Infrastructure)
 10) Refactoring: Guard Clause + TestCases
+11) λ python: Errors should never pass silently
