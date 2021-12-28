@@ -9,7 +9,7 @@ namespace HelloWorld.Test
     [Test]
     public void GetRootTest()
     {
-      var root = ProgramCompositionRoot.GetRoot();
+      var root = ProgramCompositionRoot.Root;
 
       Assert.Multiple(() =>
       {

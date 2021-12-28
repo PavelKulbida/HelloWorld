@@ -16,7 +16,7 @@ namespace HelloWorld
       try
       {
         ProgramCompositionRoot
-          .GetRoot()
+          .Root
           .Execute();
 
         return ExitSuccessful;

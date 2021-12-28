@@ -1,16 +1,22 @@
 ﻿using HelloWorld.Application;
 using HelloWorld.Infrastructure;
+using SimpleInjector;
 
 namespace HelloWorld
 {
   internal static class ProgramCompositionRoot
   {
-    public static IOutputSalutation GetRoot()
-    {
-      var salutator = new Salutator();
-      var output = new ConsoleAdapter();
+    private static readonly Container ProgramContainer = new Container();
 
-      return new OutputSalutation(salutator, output);
+    static ProgramCompositionRoot()
+    {
+      ProgramContainer.Register<ISalutator, Salutator>(Lifestyle.Singleton);
+      ProgramContainer.Register<IOutput, ConsoleAdapter>(Lifestyle.Singleton);
+      ProgramContainer.Register<IOutputSalutation, OutputSalutation>(Lifestyle.Singleton);
+
+      ProgramContainer.Verify();
     }
+
+    public static IOutputSalutation Root => ProgramContainer.GetInstance<IOutputSalutation>();
   }
 }
