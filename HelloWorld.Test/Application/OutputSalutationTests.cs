@@ -1,6 +1,6 @@
 ﻿using System;
 using HelloWorld.Application;
-using Moq;
+using HelloWorld.Test.DSL;
 using NUnit.Framework;
 
 namespace HelloWorld.Test.Application
@@ -13,16 +13,14 @@ namespace HelloWorld.Test.Application
     {
       var testString = "any test string";
 
-      var salutatorStub = new Mock<ISalutator>();
-      salutatorStub.Setup(x => x.GetMessage())
-        .Returns(testString);
+      var outputMock = Given.OutputMock.Please;
 
-      var outputMock = new Mock<IOutput>();
+      var outputSalutation = Given.OutputSalutation
+        .WithSalutationString(testString)
+        .WithOutputMock(outputMock)
+        .Please;
 
-      var outputSalutation = new OutputSalutation(salutatorStub.Object,
-        outputMock.Object);
 
-      
       outputSalutation.Execute();
 
 
@@ -41,8 +39,8 @@ namespace HelloWorld.Test.Application
 
     private static TestCaseData[] NullableParameters(string testMethodName)
     {
-      var producer = new Mock<ISalutator>().Object;
-      var consumer = new Mock<IOutput>().Object;
+      var producer = Given.SalutatorMock.Please.Object;
+      var consumer =  Given.OutputMock.Please.Object;
 
       return new[]
       {

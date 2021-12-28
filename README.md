@@ -12,3 +12,4 @@
 10) Refactoring: Guard Clause + TestCases
 11) λ python: Errors should never pass silently
 12) DI container: SimpleInjector
+13) Unit testing (Given...Please)
